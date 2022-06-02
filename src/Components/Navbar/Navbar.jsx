@@ -56,10 +56,11 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
-  const Navbar = ({ setOpenSignIn, setOpenLogin }) => {
+  const Navbar = ({ setOpenSignIn, setOpenLogin, setOpenChat }) => {
 
       const handleOpenSigIn = () => setOpenSignIn(true);
       const handleOpenLogin = () => setOpenLogin(true);
+      const handleOpenChat = () => setOpenChat(true);
 
       return (
         <Box sx={{ flexGrow: 1 }} style={{zIndex: '1'}}>
@@ -97,9 +98,9 @@ const Search = styled('div')(({ theme }) => ({
             <a href="#/store" className={styles.navbarLink}>
                 Store
             </a>
-            <a href="#/chat" className={styles.navbarLink}>
+            {/* <a href="#/chat" className={styles.navbarLink}>
                 Chat
-            </a>
+            </a> */}
             <a href="#/wallet" className={styles.navbarLink}>
                 Wallet
             </a>
@@ -135,6 +136,18 @@ const Search = styled('div')(({ theme }) => ({
                 }}>
                   Log In
                 </ButtonUnstyled>
+
+                <ButtonUnstyled onClick={handleOpenChat} className={styles.navbarLink} style={{
+                  fontSize: '1.15rem', 
+                  fontfamily: 'arial',
+                  textTransform: 'none',
+                  background: 'none',
+                  border: '0',
+                  padding: '0'
+                }}>
+                  Chat
+                </ButtonUnstyled>
+
 
             </Toolbar>
             </AppBar>

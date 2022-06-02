@@ -7,6 +7,7 @@ import Login from './Components/Login/Login'
 import Home from './Components/Home/Home.jsx'
 import ModalLogIn from './Components/Modal/ModalLogin.jsx'
 import ModalSigIn from './Components/Modal/ModalSigIn.jsx'
+import ModalChat from './Components/Modal/ChatModal.jsx'
 
 const style = {
   position: 'absolute',
@@ -25,14 +26,16 @@ const App = () => {
 
   const [openSignIn, setOpenSignIn] = React.useState(false);
   const [openLogIn, setOpenLogIn] = React.useState(false);
+  const [openChat, setOpenChat] = React.useState(false);
 
   return (
     <>
       <Router>
         <header>
-          <Navbar setOpenLogin={setOpenLogIn} setOpenSignIn={setOpenSignIn} />
+          <Navbar setOpenLogin={setOpenLogIn} setOpenSignIn={setOpenSignIn} setOpenChat={setOpenChat} />
           <ModalSigIn open={openSignIn} setOpen={setOpenSignIn} />
           <ModalLogIn open={openLogIn} setOpen={setOpenLogIn} />
+          <ModalChat open={openChat} setOpen={setOpenChat} />
 
         </header>
         <main style={{ margin: '0', overflow: 'hidden' }}>
